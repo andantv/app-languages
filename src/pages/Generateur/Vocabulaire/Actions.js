@@ -7,7 +7,7 @@ console.log("el valor de id exercise es: "+idExercise);
   let [wordLength, setWordLength] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost/api/responses/VocabulaireResponse.php?value="+idExercise)
+    fetch("http://languageapi.andantv.com/api/responses/VocabulaireResponse.php?value="+idExercise)
       .then((res) => {
           console.log(res);
         return res.json();
@@ -32,7 +32,7 @@ console.log("el valor de id exercise es: "+idExercise);
   const insertWord = (newWord) => {
     console.log(newWord["idExercise"]);
       console.log(newWord);
-    fetch(`http://localhost/api/responses/VocabulaireResponse.php?id=&mot=${newWord["mot"]}&traduction=${newWord["traduction"]}&audio=1&image=1&activiteId=${newWord["idExercise"]}`, { 
+    fetch(`http://languageapi.andantv.com/api/responses/VocabulaireResponse.php?id=&mot=${newWord["mot"]}&traduction=${newWord["traduction"]}&audio=1&image=1&activiteId=${newWord["idExercise"]}`, { 
       method: "POST"})
       .then((res) => {
         return res.json();
@@ -66,7 +66,7 @@ console.log("el valor de id exercise es: "+idExercise);
   let wordDeleted = words.filter((word) => {
     return word.id !== theID;
   });
-  fetch(`http://localhost/api/responses/VocabulaireResponse.php?value=${theID}`, {
+  fetch(`http://languageapi.andantv.com/api/responses/VocabulaireResponse.php?value=${theID}`, {
     method: "DELETE",
     headers: {
         "Content-Type": "application/json",
@@ -119,7 +119,7 @@ console.log("el valor de id exercise es: "+idExercise);
   // Updating a user.
   const updateWord = (wordData) => {
       console.log(wordData);
-    fetch(`http://localhost/api/responses/VocabulaireResponse.php?value=${wordData["id"]}&mot=${wordData["mot"]}&traduction=${wordData["traduction"]}&audio=1&image=1&activiteId=26`, {
+    fetch(`http://languageapi.andantv.com/api/responses/VocabulaireResponse.php?value=${wordData["id"]}&mot=${wordData["mot"]}&traduction=${wordData["traduction"]}&audio=1&image=1&activiteId=32`, {
       method: "PUT",
       headers: {
         'Content-Type': 'application/json',

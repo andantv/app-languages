@@ -67,9 +67,9 @@ const AddProjet = (props) => {
 
       {submitted ? (
         <div>
-          <h4>You submitted successfully!</h4>
+          <h4>Vous avez soumis avec succès !</h4>
           <button className="btn btn-success" onClick={newProjet}>
-            Add
+            Ajouter
           </button>
         </div>
       ) : (
@@ -131,7 +131,7 @@ const AddProjet = (props) => {
                     className="form__custom-button"
                     onClick={saveProjet}
                   >
-                    Create projet
+                    Créer un projet
                   </Button>
                   </div>
 

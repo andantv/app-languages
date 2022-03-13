@@ -99,7 +99,7 @@ const AddUnit = () => {
                     onChange={handleInputChange}
                     id="num"
                     name="num"
-                    type="text"
+                    type="number"
                   />
                 </div>
                 <br /> <br />
@@ -155,7 +155,7 @@ const AddUnit = () => {
                     className="form__custom-button"
                     onClick={saveUnit}
                   >
-                    Create projet
+                   Créer l'unité
                   </Button>
                 </div>
               </Container>

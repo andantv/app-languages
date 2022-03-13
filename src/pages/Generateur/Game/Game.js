@@ -1,5 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import VocabulaireDataService from "../../../services/vocabulaire.service";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 import {
   Dialog,
@@ -29,11 +32,13 @@ function shuffleCards(array) {
 
 export default function App() {
   const [vocabulaires, setVocabulaire] = useState([]);
+  const { idUnit, idProjet, idLecon, idExercise } = useLocation();
+
   useEffect(() => {
     retrieveExercises();
   }, []);
   const retrieveExercises = () => {
-    VocabulaireDataService.getAll(26)
+    VocabulaireDataService.getAll(idExercise)
       .then((response) => {
         setVocabulaire(response.data);        
       })
@@ -149,10 +154,28 @@ console.log(arr2);
   }
   return (
     <div className="App">
+            <div
+        className="col-12"
+        style={{ display: "flex", justifyContent: "right" }}
+      >
+        <div className="status-card__icon-plus-add">
+          <Link
+            to={{   
+              pathname: `/vocabulaire-list`,
+              idProjet: idProjet,
+              idUnit: idUnit,
+              idLecon: idLecon,
+              idExercise: idExercise,
+            }}
+          >
+            <i className="bx bx-arrow-back"> </i>
+          </Link>
+        </div>
+      </div>
       <header>
-        <h3>Play the Flip card game</h3>
+        <h3>Bienvenue</h3>
         <div>
-          Select two cards with same content consequtively to make them vanish
+        Dans cet exercice, vous devez trouver le mot avec sa traduction correcte. C'est parti!
         </div>
       </header>
       <div className="container">
@@ -177,7 +200,7 @@ console.log(arr2);
           </div>
           {localStorage.getItem("bestScore") && (
             <div className="high-score">
-              <span className="bold">Best Score:</span> {bestScore}
+              <span className="bold">Meilleur score:</span> {bestScore}
             </div>
           )}
         </div>
@@ -195,11 +218,11 @@ console.log(arr2);
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          Hurray!!! You completed the challenge
+        Hourra !!! Vous avez terminé le défi
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            You completed the game in {moves} moves. Your best score is{" "}
+          Vous avez terminé le jeu en{moves} mouvements. Votre meilleur score est{" "}
             {bestScore} moves.
           </DialogContentText>
         </DialogContent>

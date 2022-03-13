@@ -23,6 +23,14 @@
     padding: 20px;
     margin: 0;
   }
+
+  Button{
+    background-color: #f9f9f9;
+    
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+  }
   
   .wrapper {
     display: flex;

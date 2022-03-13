@@ -22,6 +22,7 @@ const VocabulaireList = () => {
 
   const updateNewData = (e, field) => {
     setNewData({
+      idExercise: 32,
       ...newData,
       [field]: e.target.value,
     });
@@ -33,13 +34,13 @@ const VocabulaireList = () => {
   };
 
   const deleteConfirm = (id) => { 
-    if (window.confirm("Are you sure?")) {
+    if (window.confirm("Êtes-vous sûr?")) {
       deleteWord(id);
     }
   };
 
   return !wordLength ? (
-    <p>{wordLength === null ? "Loading..." : "Please insert some users."}</p>
+    <p>{wordLength === null ? "Chargement..." : "Veuillez insérer quelques vocabulaires."}</p>
   ) : (
     <table>
       <thead>
@@ -84,12 +85,13 @@ const VocabulaireList = () => {
               <td>{mot}</td>
               <td>{traduction}</td>
               <td>
-                <button
+                {/*                 <button
                   className="btn default-btn"
                   onClick={() => enableEdit(id, mot, traduction)}
                 >
                   Edit
-                </button>
+                </button> */}
+
                 <button
                   className="btn red-btn"
                   onClick={() => deleteConfirm(id)}

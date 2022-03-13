@@ -28,7 +28,7 @@ const Form = () => {
  
   return (
     <form className="insertForm" onSubmit={submitWord}>
-      <h3>Insert word  </h3> <br />
+      <h3>Insérer un mot  </h3> <br />
       <label htmlFor="mot">Mot</label>
 
       <input

@@ -103,7 +103,7 @@ const AddLesson = () => {
                     onChange={handleInputChange}
                     id="num"
                     name="num"
-                    type="text"
+                    type="number"
                   />
                 </div>
                 <br /> <br />
@@ -170,7 +170,7 @@ const AddLesson = () => {
                     className="form__custom-button"
                     onClick={saveLecon}
                   >
-                    Create lecon
+                    Créer une leçon
                   </Button>
                 </div>
               </Container>

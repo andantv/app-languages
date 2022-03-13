@@ -7,26 +7,14 @@ import Form from "./Form";
 import VocabulaireList from "./VocabulaireList";
 import { Actions } from "./Actions";
 import "./Vocabulaire.css";
+import Button from "../../../components/button/Button";
 
 
 const ExerciseList = () => {
-  const [vocabulaires, setVocabulaire] = useState([]);
+
   const { idUnit, idProjet, idLecon, idExercise } = useLocation();
   const data = Actions(idExercise);
 
-  useEffect(() => {
-    retrieveExercises();
-  }, []);
-  const retrieveExercises = () => {
-    VocabulaireDataService.getAll(idExercise)
-      .then((response) => {
-        setVocabulaire(response.data);
-        console.log(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
 
   return (
     <div>
@@ -59,6 +47,26 @@ const ExerciseList = () => {
           <section className="right-side">
             <VocabulaireList />
           </section>
+          <Link             to={{
+              pathname: `/game`,
+              idProjet: idProjet,
+              idUnit: idUnit,
+              idLecon: idLecon,
+              idExercise: idExercise,
+            }}>
+
+              <div  style={{ textAlign: "center"}}  >
+              <Button
+                    type="button"
+                    color="primary"
+                    className="form__custom-button"
+                             
+                  >
+                    Jouer
+                  </Button>
+              </div>
+          
+          </Link>
         </div>
       </div>
     </Provider>

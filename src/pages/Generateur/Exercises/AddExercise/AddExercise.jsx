@@ -171,7 +171,7 @@ const AddExercise = () => {
                     className="form__custom-button"
                     onClick={saveExercise}
                   >
-                    Create exercise
+                    Créer un exercice
                   </Button>
                 </div>
               </Container>
