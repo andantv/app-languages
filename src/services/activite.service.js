@@ -4,6 +4,9 @@ class ActiviteDataService {
   getAll(leconId) {
     return http.get(`responses/ActiviteResponse.php?value=${leconId}`);
   } 
+  getAllActivities() {
+    return http.get(`responses/ActiviteResponse.php`);
+  } 
 
   create(data) {
       console.log(data);

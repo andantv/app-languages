@@ -17,7 +17,7 @@ import { useSessionStorage } from './pages/useSessionStorage';
 
 const store = createStore(rootReducer);
 
-document.title = "Language app";
+document.title = "Language app f";
 
 // This component updates with data from context
 function App() {

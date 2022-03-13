@@ -5,6 +5,10 @@ class ProjetDataService {
     return http.get(`responses/ProjetResponse.php?value=${userId}`);
   }
 
+  getAllProjets() {
+    return http.get(`responses/ProjetResponse.php`);
+  }
+
   create(data) {
       console.log("entra al request");
             //id=&nom=sin valor&descrip=descript&langueId=1&userId=1

@@ -5,6 +5,11 @@ class LeconDataService {
     return http.get(`responses/LeconResponse.php?value=${unitId}`);
   } 
 
+  getAllLecons() {
+    return http.get(`responses/LeconResponse.php`);
+  } 
+
+
   create(data) {
       console.log(data);
             //id&num=1&nom=leconuno&breveDescrip=breve&longueDescrip=longue&uniteId=2&sujetId=1&audioVisuelId=1

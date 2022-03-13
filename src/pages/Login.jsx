@@ -12,8 +12,9 @@ const Login = ( props ) => {
   const [isLogged, setLoggin] = useSessionStorage('login', false);
   const [idUser, setIdUser] = useSessionStorage('idUser', 0);
   const [ nomUser, setNomUser] = useSessionStorage('nom', "");
-  //const [nomUser, setNomUser] = useSessionStorage('nomUser', '');
- // const [nomUser, setNomUser] = useSessionStorage('nomUser', "");
+  const [fields, setFields] = useState("");
+  const [errors, setErrors] = useState({});
+  const [formIsValid, setfFrmIsValid] = useState(true);
 
 // Deleting a user. 
 
@@ -42,6 +43,32 @@ const Login = ( props ) => {
       });
   };
 
+  function handleValidation() {
+
+
+    //Name
+    if (!fields["username"]) {
+      setfFrmIsValid(false);
+      setErrors({
+        name: "Cannot be empty"
+      });
+    }
+
+    if (typeof fields["username"] !== "undefined") {
+      if (!fields["username"].match(/^[a-zA-Z]+$/)) {
+        setfFrmIsValid(false);
+        setErrors({
+          name: "Only letters"
+        });
+      }
+    }
+
+    return errors;
+  }
+  
+
+
+
   return (
     <div>
       <form className="center ">
@@ -49,10 +76,11 @@ const Login = ( props ) => {
         <div className="topnav__search">
           <input
             style={{ backgroundColor: "white" }}
-            placeholder="Nom du projet"
+            placeholder="Username"
             className="form-control"
             labelText="Username"
             required="required"
+      
             onChange={(event) => setUsername(event.target.value)}
             id="username"
             name="username"
@@ -70,7 +98,7 @@ const Login = ( props ) => {
             onChange={(event) => setPassword(event.target.value)}
             id="password"
             name="password"
-            type="text"
+            type="password"
           />
         </div>
         <Button

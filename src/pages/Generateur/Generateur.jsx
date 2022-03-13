@@ -7,7 +7,6 @@ import { useSessionStorage } from '../useSessionStorage';
 
 const Generateur = () => {
   const [idUser, setIdUser] = useSessionStorage('idUser', 0);
-  console.log(idUser);
   const [projets, setProjets] = useState([]);
   useEffect(() => {
     retrieveProjets();

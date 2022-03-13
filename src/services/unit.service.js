@@ -5,6 +5,10 @@ class UnitDataService {
     return http.get(`responses/UniteResponse.php?value=${projetId}`);
   } 
 
+  getAllUnits() {
+    return http.get(`responses/UniteResponse.php`);
+  } 
+
   create(data) {
       console.log(data);
             //id&num=1&nom=simon&descrip=asd&publicId=1&niveauId=1&projetId=2

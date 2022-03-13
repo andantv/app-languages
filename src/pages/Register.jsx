@@ -60,9 +60,9 @@ const Register = () => {
         <h2 className="page-header">Register</h2>
         {submitted ? (
         <div>
-          <h4>You submitted successfully!</h4>
+          <h4>Vous avez soumis avec succès !</h4>
           <button className="btn btn-success" onClick={newUtilisateur}>
-            Add
+            Ajouter
           </button>
         </div>
       ) : (
@@ -100,7 +100,7 @@ const Register = () => {
                   <div className="topnav__search">
                     <input
                       style={{ backgroundColor: "white"}}
-                      placeholder="prenom"
+                      placeholder="Email"
                       className="form-control"
                       labelText="email"
                       required="required"
@@ -115,9 +115,9 @@ const Register = () => {
                   <div className="topnav__search">
                     <input
                       style={{ backgroundColor: "white"}}
-                      placeholder="nomUtilisateur"
+                      placeholder="Nom utilisateur"
                       className="form-control"
-                      labelText="nomUtilisateur"
+                      labelText="nom utilisateur"
                       required="required"
                       value={utilisateur.nomUtilisateur}
                       onChange={handleInputChange}
@@ -130,15 +130,15 @@ const Register = () => {
                   <div className="topnav__search">
                     <input
                       style={{ backgroundColor: "white"}}
-                      placeholder="motDePasse"
+                      placeholder="Mot de passe"
                       className="form-control"
-                      labelText="motDePasse"
+                      labelText="mot De Passe"
                       required="required"
                       value={utilisateur.motDePasse}
                       onChange={handleInputChange}
                       id="motDePasse"
                       name="motDePasse"
-                      type="text"
+                      type="password"
                     />
                   </div>
                   
