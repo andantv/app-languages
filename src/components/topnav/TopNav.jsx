@@ -51,11 +51,14 @@ const Topnav = () => {
                     <Dropdown
                         customToggle={() => renderUserToggle(curr_user,nomUser)}
                         contentData={user_menu}
-                        renderItems={(item, index) => <Link  key={index} onClick={logout} to='/login'>Logout</Link>}
+                      
                         
                     />
+                     
                 </div>
-
+                <div className="topnav__right-item">
+                <Link  onClick={logout} to='/login'>Logout</Link>
+                </div>
                 <div className="topnav__right-item">
                     <ThemeMenu/>
                 </div>
