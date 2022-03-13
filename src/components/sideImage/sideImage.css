@@ -1,0 +1,14 @@
+.sideImage {
+    min-width: var(--sidebarImage-width);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-image: url("../../assets/images/data.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+
+

@@ -1,0 +1,16 @@
+.layout_register {
+    color: var(--txt-color);
+}
+
+.layout__content_register {
+    padding-left: var(--sidebarImage-width);
+    border-radius: 0 0 0 100%;
+    background-color: #08003C;
+    min-height: 100vh;
+}
+
+
+.layout__content-main_register {
+    padding: 30px;
+
+}
