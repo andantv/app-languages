@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import StatusCard from "../components/status-card/StatusCard";
 
 import Table from "../components/table/Table";
+import ReactPlayer from 'react-player'
+import Video from "../assets/video/Demo.mp4";
 
 import Badge from "../components/badge/Badge";
 
@@ -136,11 +138,18 @@ const Dashboard = () => {
         <div className="col-8"></div>
         <div className="col-12">
           <div className="card">
-            <div className="card__header">
-              <h3>latest orders</h3>
-            </div>
             <div className="card__body">
+            <div className="video-responsive">
+            <ReactPlayer
+            className='react-player fixed-bottom'
+            url= {Video}
+            width='100%'
+            height='100%'
+            controls = {true}
 
+            />
+
+  </div>
             </div>
           </div>
         </div>
