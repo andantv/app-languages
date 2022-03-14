@@ -131,9 +131,9 @@ const Dashboard = () => {
               </div>
 
           </div>
-        </div>
+        </div> 
 
-        <h2 className="page-header">Présentation du projet</h2>
+        <h2 className="page-header">Présentation du projet.</h2>
 
         <div className="col-8"></div>
         <div className="col-12">
